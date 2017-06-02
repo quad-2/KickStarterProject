@@ -113,14 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 //checking if the response and response body is not null
                 if (response != null && response.body() != null) {
                     projectData = response.body();
-                    for (ApiDatum data : projectData){
-                        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-ddTHH:mm:ss.SSS");
-                        try {
-                            Date date = formatter.parse(data.getEndTime());
-                        } catch (ParseException e) {
-                            e.printStackTrace();
-                        }
-                    }
                     setRecyclerView(projectData);
                 }
             }
